@@ -1,0 +1,5 @@
+-> Correct timer0 issue
+-> Find invalids opcodes
+-> Expand GUI
+-> make pure win32 gui ??
+-> Compile with full version of VC6...

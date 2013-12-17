@@ -1,0 +1,12 @@
+2003-12-11 (0.02.B alpha) - TRAPIER Manoel (godzil@free.fr)
+- Update some opcodes
+
+2003-12-04 (0.02.A alpha) - TRAPIER Manoel (godzil@free.fr)
+- Added opcode for MOV C,(bit)
+- Added opcode for CPL C
+
+
+2003-10-31 (v0.02 alpha) - Mariusz Kasolik
+- corrected hex loading
+- added flag support for "add" and "addc" instructions
+- added offset counting in relative jumps for disassembler
