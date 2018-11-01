@@ -1,0 +1,83 @@
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Emu51 - Project page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+body,td,th {
+	color: #FFFF99;
+}
+body {
+	background-color: #000000;
+}
+.style1 {
+	font-size: xx-large;
+	font-weight: bold;
+}
+a {
+	color: #FF9900;
+}
+</style></head>
+<body>
+<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+<div align="center" class="style1">
+  <p>Emu51 - 0.02B alpha</p>
+</div>
+<div align="center">
+	<a href="#DOWNLOAD">Download</a> - <a href="#README">Readme</a> - <a href="#HISTORY">History</a> - <a href="#TODO">Todo</a>
+	<p><img src="./emu51.gif"></p>
+</div>
+  <a name="DOWNLOAD"></a>
+  <p align="left">Emu51 is a 8051 emulator. You can download it <a href="./emu51-bin-win32-vc6-20031112-002B.zip">here</a></p>
+
+  <p align="left">Old version : 0.02A :<a href="./emu51-bin-win32-vc6-20030412-002A.zip">here</a></p>
+
+  <p align="left">Sources :<a href="https://github.com/Godzil/Emu51/">here</a></p>
+
+  <p align="left">There is an assembler who can be used with emu51 that can be downloaded <a href="http://www.metaice.com/ASM51/Files/ASM51.zip">here</a></p>
+<br>
+<hr>
+<p align="left"><strong>README.txt<a name="README"></a></strong></p>
+<pre>
+EMU51 (Mariusz Kasolik) - Modifications done by TRAPIER Manoel (godzil@free.fr)
+Source file (platform independed)
+
+Emulator accepts *.bin, *.hex files.
+You can also compile source file by using external compiler, emu51 is compatible with
+free 8051 compiler by MetaLink Corporation (http://www.metaice.com/ASM51/Files/ASM51.zip).
+Just put asm51.exe into this directory and use Shift+F9 key combination to compile and load source file (only windows :-( ).
+I'm still searching multiplatform 8051 assembler compiler for emu51, because i want to add full compilation support for all supported platforms.
+
+
+You can find history in the file of the same name.
+
+ - Compilation has been tested with VisualStudio 6 using latest (4.1.9) allegro library.
+ - Compilation tested too with DJGPP with GCC 3.2.1 and allegro 4.1.9 
+</pre>
+<hr>
+<p><strong>HISTORY.txt<a name="HISTORY"></a></strong></p>
+<pre>
+2003-12-11 (0.02.B alpha) - TRAPIER Manoel (godzil@free.fr)
+- Update some opcodes
+
+2003-12-04 (0.02.A alpha) - TRAPIER Manoel (godzil@free.fr)
+- Added opcode for MOV C,(bit)
+- Added opcode for CPL C
+
+
+2003-10-31 (v0.02 alpha) - Mariusz Kasolik
+- corrected hex loading
+- added flag support for "add" and "addc" instructions
+- added offset counting in relative jumps for disassembler
+</pre>
+<hr>
+<p><strong>TODO.txt<a name="TODO"></a></strong></p>
+<pre>
+-> Correct timer0 issue
+-> Find invalids opcodes
+-> Expand GUI
+-> make pure win32 gui ??
+-> Compile with full version of VC6...
+</pre>
+</body>
+</html>
