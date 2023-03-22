@@ -14,7 +14,7 @@ class code_51
 public:
     char mnem[6];              // instruction mnemonic (2-4 characters)
     uint8_t code;              // instruction code
-    uint8_t lenght;            // bytes which are needed to write this instruction into memory
+    uint8_t length;            // bytes which are needed to write this instruction into memory
     uint8_t cycles;            // time unit
     char display_string[20];   // string which is ready for displaying, it's made by make_ds(WORD) method
     char datas[12];            // string which contains datas which will be displayed after mnemonic

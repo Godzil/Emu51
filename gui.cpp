@@ -136,22 +136,22 @@ void change_char(char *string, char ch, int pos)
     string[pos - 1] = ch;
 }
 
-void insert_char(char *string, char ch, int pos, int lenght)
+void insert_char(char *string, char ch, int pos, int length)
 {
-    for ( int c = lenght ; c > pos ; c-- )
+    for ( int c = length ; c > pos ; c-- )
     {
         string[c - 1] = string[c - 2];
     }
     string[pos - 1] = ch;
 }
 
-void cut_char(char *string, int pos, int lenght)
+void cut_char(char *string, int pos, int length)
 {
-    for ( int c = pos ; c < lenght ; c++ )
+    for ( int c = pos ; c < length ; c++ )
     {
         string[c - 1] = string[c];
     }
-    string[lenght - 1] = (char) ( 32 );
+    string[length - 1] = (char) ( 32 );
 }
 
 void change_ext(char *s)
@@ -170,7 +170,7 @@ void change_ext(char *s)
     return;
 }
 
-void GetText(char *text, BITMAP *buf, int x, int y, int w, int h, int lenght, char *title)
+void GetText(char *text, BITMAP *buf, int x, int y, int w, int h, int length, char *title)
 {
     int c;
     BITMAP *surface = create_bitmap(w, h);
@@ -188,11 +188,11 @@ void GetText(char *text, BITMAP *buf, int x, int y, int w, int h, int lenght, ch
     textprintf_centre(surface, mainf, surface->w / 2, 4, makecol(255, 255, 255), " %s ", title);
     text[0] = 32;
 
-    for ( c = 1 ; c <= lenght - 1 ; c++ )
+    for ( c = 1 ; c <= length - 1 ; c++ )
     {
         text[c] = 32;
     }
-    text[lenght - 1] = 0;
+    text[length - 1] = 0;
     clear_keybuf();
     int pos = 1;
     uint16_t key_p;
@@ -219,16 +219,16 @@ void GetText(char *text, BITMAP *buf, int x, int y, int w, int h, int lenght, ch
             if ( pos > 1 )
             {
                 pos--;
-                cut_char(text, pos, lenght);
-                text[lenght - 2] = 32;
-                text[lenght - 1] = 0;
+                cut_char(text, pos, length);
+                text[length - 2] = 32;
+                text[length - 1] = 0;
             }
             flag = true;
             break;
         case KEY_DEL:
-            cut_char(text, pos, lenght);
-            text[lenght - 2] = 32;
-            text[lenght - 1] = 0;
+            cut_char(text, pos, length);
+            text[length - 2] = 32;
+            text[length - 1] = 0;
             flag = true;
             break;
         case KEY_LEFT:
@@ -237,20 +237,20 @@ void GetText(char *text, BITMAP *buf, int x, int y, int w, int h, int lenght, ch
             flag = true;
             break;
         case KEY_RIGHT:
-            if ( pos < lenght )
+            if ( pos < length )
             { pos++; }
             flag = true;
             break;
         }
-        if ( !key[KEY_ENTER] && key_ch != 0 && pos < lenght && !flag )
+        if ( !key[KEY_ENTER] && key_ch != 0 && pos < length && !flag )
         {
-            insert_char(text, key_ch, pos, lenght);
+            insert_char(text, key_ch, pos, length);
             pos++;
-            text[lenght - 1] = 0;
+            text[length - 1] = 0;
         }
     }
 
-    text[lenght - 1] = 0;
+    text[length - 1] = 0;
     blit(cache, buf, 0, 0, x, y, w, h);
     destroy_bitmap(cache);
     destroy_bitmap(surface);

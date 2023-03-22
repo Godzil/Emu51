@@ -68,11 +68,11 @@ void init_8051(void)
 }
 
 // 8051 assembler macros
-int get_lenght(uint8_t code)
+int get_length(uint8_t code)
 {
     if ( asm51[code].code == code )
     {
-        return asm51[code].lenght;
+        return asm51[code].length;
     }
     else
     {
@@ -100,7 +100,7 @@ int load_code_table(code_51 *tmp_tab)
     FILE *strio = NULL;
     char _mnem[6];
     int _code;
-    int _lenght;
+    int _length;
     int _cycles;
     char _datas[12];
     strio = fopen("list51.txt", "r");
@@ -111,7 +111,7 @@ int load_code_table(code_51 *tmp_tab)
             fscanf(strio, "%x", &_code);
             fscanf(strio, "%s", _mnem);
             fscanf(strio, "%s", _datas);
-            fscanf(strio, "%d", &_lenght);
+            fscanf(strio, "%d", &_length);
             fscanf(strio, "%d", &_cycles);
             if ( _mnem[0] == 'E' && _mnem[1] == 'N' && _mnem[2] == 'D' )
             {
@@ -120,7 +120,7 @@ int load_code_table(code_51 *tmp_tab)
             tmp_tab[_code].code = (uint8_t) _code;
             strcpy(tmp_tab[_code].mnem, _mnem);
             strcpy(tmp_tab[_code].datas, _datas);
-            tmp_tab[_code].lenght = (uint8_t) _lenght;
+            tmp_tab[_code].length = (uint8_t) _length;
             tmp_tab[_code].cycles = (uint8_t) _cycles;
         }
         fclose(strio);
@@ -710,8 +710,8 @@ int main(void)
             }
             if ( key[KEY_DOWN] )
             {
-                aadr += get_lenght(prog[aadr]);
-                aadr += get_lenght(prog[aadr]);
+                aadr += get_length(prog[aadr]);
+                aadr += get_length(prog[aadr]);
             }
             if ( key[KEY_PGUP] && !( key[KEY_LSHIFT] || key[KEY_RSHIFT] ))
             {

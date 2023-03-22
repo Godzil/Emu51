@@ -55,7 +55,7 @@ void dis_asm::draw(uint16_t adress)
         if ( asm51[ram[adress]].code == ram[adress] )
         {
             textprintf(surface, mainf, left, c, color, "%4x:", adress);
-            for ( cnt = 0 ; cnt < asm51[ram[adress]].lenght ; cnt++ )
+            for ( cnt = 0 ; cnt < asm51[ram[adress]].length ; cnt++ )
             {
                 if ( PC == ( adress + cnt ))
                 {
@@ -68,7 +68,7 @@ void dis_asm::draw(uint16_t adress)
                 hexoutB(left + 50 + cnt * 24, c, colPC, ram[adress + cnt]);
             }
             textprintf(surface, mainf, left + 144, c, color, "%s", asm51[ram[adress]].display_string);
-            adress += asm51[ram[adress]].lenght;
+            adress += asm51[ram[adress]].length;
         }
         else
         {
