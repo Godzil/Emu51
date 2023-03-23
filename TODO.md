@@ -1,8 +1,7 @@
 TODO List
 =========
 
-Work in progress and probably need to be updated
-
-[ ] Correct timer0 issue
-[ ] Find invalids opcodes
-[ ] Expand GUI
+ * [ ] Remove Allegro and use GL/glfw3 instead for window creation and framebuffer-ish
+ * [ ] Replace GUI using docked Dear ImGui
+ * [ ] Add frame buffer device
+ * [ ] Refactor code/classes there are lots of function that should be part of a class
